@@ -1,0 +1,12 @@
+---
+---
+
+<!-- Script pour conserver le thème choisi en le stockant dans le local storage entre les pages -->
+<script is:inline>
+	const doc = document.firstElementChild;
+	const localStorageTheme = localStorage.getItem('theme');
+
+	if (localStorageTheme !== null) {
+		doc.setAttribute('data-theme', localStorageTheme);
+	}
+</script>

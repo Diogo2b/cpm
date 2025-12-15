@@ -1,0 +1,132 @@
+---
+import { Icon } from 'astro-icon/components';
+import {
+	AnnouncementBar,
+	Button,
+	CustomerQuoteSection,
+	ThreeColumnTextSection,
+	YouTubeEmbedSection,
+	StickyTextImageSection,
+	CtaCardSection,
+} from '@components/odyssey-theme';
+import Layout from '../../layouts/Page.astro';
+import TextAndImageHero from '../../components/sections/heros/TextAndImageHero.astro';
+
+const seo = {
+	title: 'Nos Services | Corse Pose Menuiserie',
+	description:
+		'Menuiseries aluminium, PVC et bois en Corse-du-Sud. Fenêtres, portes, volets, portails et agencements sur mesure par CPM.',
+};
+---
+
+<AnnouncementBar
+	text="Zone d’intervention : Appietto, Ajaccio et toute la Corse-du-Sud"
+	href="/company/contact"
+	slot="announcement-bar"
+/>
+<Layout {seo}>
+	<TextAndImageHero reversed>
+		<div slot="text-container">
+			<h1>Des menuiseries sur mesure pour chaque projet</h1>
+			<p>
+				Depuis 2016, CPM sélectionne les meilleurs fabricants pour vous proposer des solutions aluminium,
+				PVC ou bois adaptées à votre cadre de vie. Nous garantissons une pose soignée, conforme aux
+				exigences QUALIBAT RGE.
+			</p>
+		</div>
+		<div slot="btns-container">
+			<Button href="/company/contact" customIcon
+				>Demander un devis
+				<Fragment slot="icon">
+					<Icon name="ic:baseline-chevron-right" />
+				</Fragment></Button
+			>
+		</div>
+		<picture slot="image-container">
+			<img
+				src="/assets/images/landing-1/landing-hero-1.jpg"
+				alt="Installation de menuiseries par CPM"
+				id="home-hero-image"
+			/>
+		</picture>
+	</TextAndImageHero>
+
+	<CustomerQuoteSection
+		quoteText="CPM a remplacé toutes nos fenêtres en aluminium en respectant les délais annoncés. Une équipe professionnelle et un chantier impeccable."
+		customerName="Pauline, Ajaccio"
+	/>
+
+	<ThreeColumnTextSection>
+		<div slot="column-1-body">
+			<h2 id="fenetres-portes">Fenêtres &amp; portes</h2>
+			<p>
+				Nous réalisons la fourniture et la pose de fenêtres, baies vitrées et portes d’entrée sur mesure
+				pour un confort thermique et acoustique optimal.
+			</p>
+		</div>
+		<Button slot="column-1-cta" href="/company/contact">Planifier une visite</Button>
+		<div slot="column-2-body">
+			<h2 id="volets">Volets battants &amp; roulants</h2>
+			<p>
+				Volets en aluminium, PVC ou bois, motorisés ou manuels : nous vous conseillons sur la meilleure
+				solution pour sécuriser et isoler votre habitation.
+			</p>
+		</div>
+		<Button slot="column-2-cta" href="/company/contact" outlined>Demander un devis</Button>
+		<div slot="column-3-body">
+			<h2 id="portails">Portails &amp; automatismes</h2>
+			<p>
+				Portails battants ou coulissants, clôtures assorties et motorisation complète pour un accès fiable
+				et sécurisé à votre propriété.
+			</p>
+		</div>
+		<Button slot="column-3-cta" href="/company/contact">Être rappelé</Button>
+	</ThreeColumnTextSection>
+
+	<StickyTextImageSection>
+		<div slot="text-container">
+			<h2 id="agencements">Agencements sur mesure</h2>
+			<h3>Placards &amp; dressings</h3>
+			<p>
+				Optimisez vos volumes avec des rangements conçus pour votre intérieur : finitions soignées et
+				accessoires pratiques.
+			</p>
+			<h3>Garde-corps &amp; terrasses</h3>
+			<p>
+				Alliez sécurité et esthétique pour vos escaliers, balcons et terrasses avec des garde-corps
+				personnalisés.
+			</p>
+			<h3>Accompagnement complet</h3>
+			<p>
+				Prise de mesures, fabrication, pose et service après-vente : nous restons votre interlocuteur unique
+				pour un projet serein.
+			</p>
+		</div>
+		<picture slot="image-container">
+			<img
+				src="/assets/images/landing-1/landing-sticky.jpg"
+				alt="Agencements intérieurs réalisés par CPM"
+				loading="lazy"
+			/>
+		</picture>
+	</StickyTextImageSection>
+
+	<YouTubeEmbedSection url="https://www.youtube.com/watch?v=cbYr75_R15M" rounded />
+
+	<CtaCardSection
+		background="var(--theme-surface-2)"
+		color="var(--theme-on-surface-2)"
+	>
+		<h2>Confiez vos menuiseries à un partenaire certifié</h2>
+		<p>
+			Contactez-nous pour une étude gratuite et personnalisée de votre projet à Appietto, Ajaccio ou dans
+			toute la Corse-du-Sud.
+		</p>
+		<Button href="/company/contact" customIcon
+			>Demander un devis gratuit
+			<Fragment slot="icon">
+				<Icon name="ic:baseline-chevron-right" />
+			</Fragment></Button
+		>
+	</CtaCardSection>
+</Layout>

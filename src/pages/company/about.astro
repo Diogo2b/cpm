@@ -1,0 +1,51 @@
+---
+import { TextSection } from '@components/odyssey-theme';
+import Layout from '../../layouts/Page.astro';
+import HeroSection from '../../components/sections/heros/HeroSection.astro';
+
+const seo = {
+	title: 'À propos | Corse Pose Menuiserie',
+	description:
+		'Depuis 2016, Corse Pose Menuiserie conçoit et installe des menuiseries sur mesure en Corse-du-Sud sous la direction de Fabrice Betti.',
+};
+---
+
+<Layout {seo}>
+	<HeroSection>
+		<div slot="text-container">
+			<h1>À propos de Corse Pose Menuiserie</h1>
+			<p>
+				Fondée en 2016 par Fabrice Betti, CPM est une entreprise familiale spécialisée dans la fourniture
+				et la pose de menuiseries aluminium, PVC et bois pour les particuliers et les professionnels.
+			</p>
+		</div>
+    <picture slot="image-container">
+      <img
+        src="/assets/images/home/classic-hero.jpg"
+        alt="Équipe Corse Pose Menuiserie"
+        id="home-hero-image"
+      />
+    </picture>
+	</HeroSection>
+  <TextSection narrow>
+    <p>
+      Nous accompagnons chaque projet de la prise de mesures à la mise en service, avec un interlocuteur unique pour assurer
+      le suivi des délais et la qualité des finitions. Notre équipe maîtrise les spécificités du climat corse et vous conseille
+      sur les matériaux les plus adaptés à votre habitation ou à votre local professionnel.
+    </p>
+    <p id="qualibat">
+      Certifiée <strong>QUALIBAT RGE</strong>, CPM vous permet de bénéficier des dispositifs d’aides à la rénovation énergétique
+      tout en profitant d’une pose irréprochable. Nous travaillons avec des fabricants reconnus pour la fiabilité de leurs gammes
+      aluminium, PVC et bois.
+    </p>
+    <p>
+      Que ce soit pour moderniser une villa à Ajaccio, sécuriser un commerce à Appietto ou aménager un espace professionnel,
+      nous intervenons avec la même exigence : sécurité, confort et esthétisme. Notre savoir-faire s’étend également aux garde-corps,
+      aux placards et aux agencements intérieurs sur mesure.
+    </p>
+    <p>
+      Notre philosophie est simple : écouter, concevoir et poser des menuiseries durables qui respectent vos envies et votre budget.
+      Parlons ensemble de votre prochain projet.
+    </p>
+  </TextSection>
+</Layout>

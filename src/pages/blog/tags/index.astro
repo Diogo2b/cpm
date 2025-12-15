@@ -1,0 +1,43 @@
+---
+import Layout from '../../../layouts/Page.astro';
+import { Container } from '@components/odyssey-theme';
+import { generateTagData } from '../../../utils/helpers.js';
+
+const posts = await Astro.glob('../posts/*.mdx');
+const tags = generateTagData(new Set(posts.flatMap(post => post.frontmatter.tags || [])));
+
+const seo = {
+  title: 'Thématiques du blog | Corse Pose Menuiserie',
+  description: 'Parcourez les articles du blog de Corse Pose Menuiserie par thématique.',
+};
+---
+
+<Layout seo={seo}>
+  <Container narrow>
+    <section class="tag-index__section">
+      <h1>Thématiques du blog</h1>
+      <p>Retrouvez nos conseils menuiserie classés par sujet.</p>
+      <ul>
+        {tags.map(tag => (
+          <li>
+            <a href={`/blog/tags/${tag.slug}`}>{tag.title}</a>
+          </li>
+        ))}
+      </ul>
+    </section>
+  </Container>
+</Layout>
+
+<style>
+.tag-index__section {
+  min-height: 60vh;
+  margin: var(--section-margin);
+}
+.tag-index__section ul {
+  margin-top: 1rem;
+  padding-left: 1rem;
+}
+.tag-index__section li {
+  margin-bottom: 0.5rem;
+}
+</style>

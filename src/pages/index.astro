@@ -1,0 +1,78 @@
+---
+import { Container, FeatureCard } from '@components/odyssey-theme';
+
+import Layout from '../layouts/Page.astro';
+import HomeHeroSection from '../components/sections/heros/HomeHeroSection.astro';
+---
+
+<Layout>
+	<HomeHeroSection />
+	<Container>
+		<section class="feature-card__section">
+			<h2>Nos Services</h2>
+			<p>
+				Que vous souhaitiez moderniser votre habitation ou sécuriser vos locaux professionnels,
+				CPM réalise la fourniture et la pose de menuiseries adaptées à votre style et à votre budget.
+			</p>
+			<div class="feature-card__grid">
+				<FeatureCard href="/landing-pages/landing-1#fenetres-portes" title="Fenêtres &amp; portes" imgSrc="/assets/images/home/screenshots/landing-1">
+				</FeatureCard>
+				<FeatureCard href="/landing-pages/landing-1#volets" title="Volets battants &amp; roulants" imgSrc="/assets/images/home/screenshots/landing-2">
+				</FeatureCard>
+				<FeatureCard href="/landing-pages/landing-1#portails" title="Portails &amp; automatismes" imgSrc="/assets/images/home/screenshots/blog">
+				</FeatureCard>
+				<FeatureCard href="/landing-pages/landing-1#agencements" title="Agencements sur mesure" imgSrc="/assets/images/home/screenshots/contact">
+				</FeatureCard>
+			</div>
+		</section>
+	</Container>
+
+	<Container>
+		<section class="feature-card__section">
+			<h2>Réalisations</h2>
+			<p>
+				Découvrez quelques-unes de nos réalisations sur mesure à Appietto et Ajaccio.
+			</p>
+			<div class="feature-card__grid">
+				<FeatureCard href="/landing-pages/landing-2" title="Projets résidentiels" imgSrc="/assets/images/home/screenshots/about">
+				</FeatureCard>
+				<FeatureCard href="/landing-pages/landing-2#professionnels" title="Espaces professionnels" imgSrc="/assets/images/home/screenshots/legal">
+				</FeatureCard>
+			</div>
+		</section>
+	</Container>
+
+	<Container>
+		<section class="feature-card__section">
+			<h2>Pourquoi choisir CPM ?</h2>
+			<p>
+				Depuis 2016, Fabrice Betti et son équipe accompagnent chaque projet avec la même exigence :
+				des menuiseries durables, un chantier maîtrisé et un suivi attentif avant, pendant et après la pose.
+			</p>
+			<div class="feature-card__grid">
+				<FeatureCard href="/company/about" title="Savoir-faire local" imgSrc="/assets/images/home/screenshots/get-started">
+				</FeatureCard>
+				<FeatureCard href="/company/about#qualibat" title="QUALIBAT RGE" imgSrc="/assets/images/home/screenshots/style-guide">
+				</FeatureCard>
+				<FeatureCard href="/company/contact" title="Devis gratuit" imgSrc="/assets/images/home/screenshots/blog-post">
+				</FeatureCard>
+			</div>
+		</section>
+	</Container>
+</Layout>
+
+<style>
+	.feature-card__section {
+		margin: var(--section-margin) auto;
+	}
+	.feature-card__grid {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: var(--theme-grid-gap);
+	}
+	@media (max-width: 768px) {
+		.feature-card__grid {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>

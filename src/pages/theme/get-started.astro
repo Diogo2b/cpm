@@ -1,0 +1,63 @@
+---
+import {Icon} from 'astro-icon/components';
+import { Button, Container, TextCardSection } from '@components/odyssey-theme';
+import Layout from '../../layouts/Page.astro';
+
+const seo = {
+	title: 'Préparer votre projet | Corse Pose Menuiserie',
+	description: 'Les étapes clés pour réussir votre projet de menuiserie avec Corse Pose Menuiserie en Corse-du-Sud.',
+};
+---
+
+<Layout {seo}>
+	<Container>
+		<TextCardSection>
+			<h1>Préparez votre projet avec CPM</h1>
+			<p>
+				Suivez ces étapes pour transformer vos idées en menuiseries sur mesure : découverte de vos besoins, visite technique,
+				devis détaillé et accompagnement jusqu’à la pose.
+			</p>
+			<div class="cta-buttons__container">
+        <Button
+        href="/landing-pages/landing-1"
+        outlined
+        customIcon
+        >
+        Découvrir nos services
+        <Fragment slot="icon">
+          <Icon name="ic:baseline-launch" />
+        </Fragment>
+      </Button>
+        <Button
+					href="/company/about"
+          customIcon
+					>
+          Notre savoir-faire
+          <Fragment slot="icon">
+            <Icon name="ic:baseline-chevron-right" />
+          </Fragment>
+				</Button>
+        <Button
+					href="/company/contact"
+          customIcon
+					>
+          Demander un devis
+          <Fragment slot="icon">
+            <Icon name="ic:baseline-chevron-right" />
+          </Fragment>
+				</Button>
+			</div>
+		</TextCardSection>
+	</Container>
+</Layout>
+
+<style>
+	.cta-buttons__container {
+		display: flex;
+		flex-wrap: wrap;
+	}
+	.cta-buttons__container :global(a) {
+    margin-right: 1rem;
+		margin-bottom: 1rem;
+	}
+</style>

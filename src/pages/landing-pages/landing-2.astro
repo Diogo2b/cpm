@@ -1,0 +1,98 @@
+---
+import Layout from '../../layouts/Base.astro';
+import LandingContactForm from '../../components/forms/LandingContactForm.astro';
+import Logo from '../../components/Logo.astro';
+
+const seo = {
+	title: 'Réalisations | Corse Pose Menuiserie',
+	description:
+		'Réalisations de menuiseries aluminium, PVC et bois en Corse-du-Sud. Projets CPM à Appietto, Ajaccio et pour les professionnels.',
+};
+---
+
+<Layout seo={seo}>
+  <div class="full-page-split__wrapper">
+    <section class="full-page-split__image-section">
+      <div class="full-page-split__logo">
+        <a href="/">
+          <Logo />
+        </a>
+      </div>
+      <picture>
+        <img
+          src="/assets/images/home/classic-hero.jpg"
+          alt="Réalisation de menuiseries par CPM"
+          class="full-page-split__image"
+        />
+      </picture>
+    </section>
+    <section class="full-page-split__content-section">
+      <div class="full-page-split__content-container">  
+        <h1>Réalisations sur mesure</h1>
+        <p>
+          CPM intervient sur des chantiers neufs et en rénovation pour les particuliers et les entreprises.
+          Découvrez nos projets et contactez-nous pour imaginer le vôtre.
+        </p>
+        <p id="professionnels">
+          Besoin d’un accompagnement pour un local professionnel ou un programme immobilier ?
+          Nous coordonnons la conception, la fabrication et la pose avec vos équipes.
+        </p>
+        <LandingContactForm/>
+      </div>
+    </section>
+  </div>
+</Layout>
+
+<style>
+.full-page-split__wrapper {
+  display: grid;
+  grid-template-columns: 6fr 4fr;
+  grid-auto-columns: 1fr;
+  min-height: 100vh;
+}
+.full-page-split__image-section {
+  position: relative;
+}
+.full-page-split__image-section :global(img) {
+ width: 100%;
+  height: 100vh;
+  object-fit: cover;
+}
+.full-page-split__logo {
+  background-color: var(--theme-surface-1);
+  color: (--theme-on-surface-1);
+  padding: 0.5rem 1rem;
+  border-radius: var(--theme-shape-radius);
+  top: 1rem;
+  left: 1rem;
+  position: absolute;
+  z-index: 1;
+}
+.full-page-split__logo a {
+  text-decoration: none;
+}
+.full-page-split__content-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.full-page-split__content-container {
+  margin: 1rem;
+  padding: 2rem;
+  background-color: var(--theme-surface-1);
+  color: var(--theme-on-surface-1);
+  border-radius: var(--theme-shape-radius);
+}
+.full-page-split__content-container h1 {
+  font-size: var(--font-size-xl);
+}
+@media(max-width: 768px) {
+  .full-page-split__wrapper {
+    grid-template-columns: 1fr;
+    grid-template-rows: 30vh auto;
+  }
+  .full-page-split__image-section :global(img) {
+    max-height: 30vh;
+  }
+}
+</style>

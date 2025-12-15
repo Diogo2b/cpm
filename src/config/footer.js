@@ -1,0 +1,78 @@
+export const footerSocials = [
+  {
+    name: 'Téléphone',
+    url: 'tel:0620865249',
+    icon: 'mdi:phone',
+  },
+  {
+    name: 'Email',
+    url: 'mailto:cpmpro@orange.fr',
+    icon: 'mdi:email',
+  },
+];
+
+export const footerLists = [
+	{
+		title: 'Navigation',
+		items: [
+			{
+				title: 'Accueil',
+				slug: '/',
+			},
+			{
+				title: 'Nos Services',
+				slug: '/landing-pages/landing-1',
+			},
+			{
+				title: 'Réalisations',
+				slug: '/landing-pages/landing-2',
+			},
+			{
+				title: 'À propos',
+				slug: '/company/about',
+			},
+			{
+				title: 'Contact',
+				slug: '/company/contact',
+			},
+		],
+	},
+	{
+		title: 'Nos Services',
+		items: [
+			{
+				title: 'Fenêtres et portes',
+				slug: '/landing-pages/landing-1#fenetres-portes',
+			},
+			{
+				title: 'Volets battants et roulants',
+				slug: '/landing-pages/landing-1#volets',
+			},
+			{
+				title: 'Portails et automatismes',
+				slug: '/landing-pages/landing-1#portails',
+			},
+			{
+				title: 'Agencements sur mesure',
+				slug: '/landing-pages/landing-1#agencements',
+			},
+		],
+	},
+	{
+		title: 'Contact',
+		items: [
+			{
+				title: 'Racanaccio, 20167 Appietto',
+				slug: 'https://maps.google.com/?q=Racanaccio%2C%2020167%20Appietto',
+			},
+			{
+				title: '06 20 86 52 49',
+				slug: 'tel:0620865249',
+			},
+			{
+				title: 'cpmpro@orange.fr',
+				slug: 'mailto:cpmpro@orange.fr',
+			},
+		],
+	},
+];

@@ -1,0 +1,70 @@
+---
+import ContactForm from '../../components/forms/ContactForm.astro';
+import Layout from '../../layouts/Page.astro';
+import { Container } from '@components/odyssey-theme';
+
+const seo = {
+	title: 'Contact | Corse Pose Menuiserie',
+	description:
+		'Demandez un devis gratuit à Corse Pose Menuiserie pour vos menuiseries aluminium, PVC et bois en Corse-du-Sud.',
+};
+---
+
+<Layout seo={seo}>
+	<Container>
+		<section class="contact-hero__section">
+			<div class="contact-hero__text-section">
+				<h1>Contactez-nous</h1>
+				<p>
+					Un projet de rénovation ou de construction ? Partagez-nous vos besoins et recevez une estimation gratuite sous 48&nbsp;h.
+				</p>
+				<ul class="contact-infos__list">
+					<li><strong>Adresse :</strong> Racanaccio, 20167 Appietto</li>
+					<li><strong>Téléphone :</strong> <a href="tel:0620865249">06&nbsp;20&nbsp;86&nbsp;52&nbsp;49</a></li>
+					<li><strong>Email :</strong> <a href="mailto:cpmpro@orange.fr">cpmpro@orange.fr</a></li>
+				</ul>
+				<p>
+					Vous pouvez également planifier une visite technique pour qu’un conseiller CPM se déplace chez vous en Corse-du-Sud.
+				</p>
+			</div>
+			<div class="col-2__container">
+				<ContactForm />
+			</div>
+		</section>
+	</Container>
+</Layout>
+
+<style>
+	.contact-hero__section {
+		margin: var(--section-margin) auto;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		min-height: calc(90vh - var(--navbar-height));
+		gap: 3rem;
+	}
+	.contact-hero__text-section {
+		padding: 2rem;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		background-color: var(--theme-surface-1);
+		border-radius: var(--theme-shape-radius);
+	}
+  .contact-infos__list {
+    margin: 1rem 0;
+    padding-left: 1rem;
+  }
+  .contact-infos__list li {
+    margin-bottom: 0.5rem;
+  }
+	.col-2__container {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+	@media (max-width: 768px) {
+		.contact-hero__section {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>

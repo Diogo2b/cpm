@@ -1,0 +1,27 @@
+---
+import { Button, FormInput, FormSelect, FormTextarea } from '@components/odyssey-theme';
+
+const selectOptions = [
+  'Recommandation',
+  'Recherche en ligne',
+  'Réseaux sociaux',
+  'Professionnel du bâtiment',
+];
+---
+
+<form name="Demande de devis CPM" method="POST" action="/contact-thank-you">
+  <FormInput type="text" label="Nom et prénom" name="Nom" placeholder="Jean Dupont" />
+  <FormInput type="email" label="Email" name="Email" placeholder="vous@example.com" />
+  <FormInput type="tel" label="Téléphone" name="Téléphone" placeholder="06 20 86 52 49" />
+  <FormSelect label="Comment nous avez-vous connus ?" options={selectOptions} />
+  <FormTextarea label="Votre message" name="Message" placeholder="Décrivez votre projet de menuiserie..." />
+  <Button>Envoyer</Button>
+</form>
+
+<style>
+  form {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+</style>

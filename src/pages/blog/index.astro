@@ -1,0 +1,51 @@
+---
+import {
+	Container,
+	TextCardSection,
+	BlogPostsList,
+} from '@components/odyssey-theme';
+import Layout from '../../layouts/Page.astro';
+import NewsletterForm from '../../components/forms/NewsletterForm.astro';
+
+const posts = await Astro.glob('./posts/*.mdx').then(posts =>
+	posts
+		.map(({ frontmatter, url }) => ({
+			title: frontmatter.title,
+			description: frontmatter.description,
+			authors: frontmatter.authors,
+			publishDate: new Date(frontmatter.publishDate),
+			featuredImage: frontmatter.featuredImage,
+			excerpt: frontmatter.excerpt,
+			href: url,
+		}))
+		.sort((a, b) => b.publishDate.valueOf() - a.publishDate.valueOf())
+);
+
+const seo = {
+	title: 'Actualités | Corse Pose Menuiserie',
+	description: 'Découvrez les actualités et conseils menuiserie de Corse Pose Menuiserie en Corse-du-Sud.',
+};
+---
+
+<Layout {seo}>
+	<Container>
+		<TextCardSection>
+			<h1>Actualités CPM</h1>
+			<p>
+				Retrouvez nos conseils menuiserie, les nouveautés produits et les chantiers marquants réalisés en Corse-du-Sud.
+				Inscrivez-vous à notre lettre d’information pour être prévenu des prochaines publications.
+			</p>
+			<NewsletterForm />
+		</TextCardSection>
+		<section class="blog-posts-list__section">
+			<h2>Derniers articles</h2>
+			<BlogPostsList posts={posts} />
+		</section>
+	</Container>
+</Layout>
+
+<style>
+	.blog-posts-list__section {
+		margin: var(--section-margin) auto;
+	}
+</style>

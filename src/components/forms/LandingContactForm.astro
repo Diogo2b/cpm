@@ -1,0 +1,23 @@
+---
+import { Icon } from 'astro-icon/components';
+import { Button, FormInput } from '@components/odyssey-theme';
+---
+
+<form name="Demande de devis rapide" method="POST" action="/contact-thank-you">
+  <FormInput type="text" label="Nom" name="Nom" placeholder="Jean Dupont" />
+  <FormInput type="email" label="Email" name="Email" placeholder="vous@example.com" />
+  <FormInput type="tel" label="Téléphone" name="Téléphone" placeholder="06 20 86 52 49" />
+  <Button customIcon>Envoyer ma demande
+    <Fragment slot="icon">
+      <Icon name="ic:baseline-chevron-right" />
+    </Fragment>
+  </Button>
+</form>
+
+<style>
+  form {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+</style>
