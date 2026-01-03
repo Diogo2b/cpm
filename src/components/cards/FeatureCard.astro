@@ -1,5 +1,8 @@
 ---
-const {href, imgSrc, title} = Astro.props;
+const { href, imgSrc, title } = Astro.props;
+const isExternalImage = typeof imgSrc === 'string' && imgSrc.startsWith('http');
+const fallbackSrc = isExternalImage ? imgSrc : `${imgSrc}.png`;
+const webpSrc = isExternalImage ? null : `${imgSrc}.webp`;
 ---
 
 <style>
@@ -50,10 +53,9 @@ const {href, imgSrc, title} = Astro.props;
       <h3 class="feature-card__title">{title}</h3>
       <!-- À terme nous pourrions utiliser l’intégration Image d’Astro, en attendant ce fallback assure une compatibilité maximale. -->
       <picture>
-        <source srcset={`${imgSrc}.webp`} type="image/webp" >
-        <img class="feature-card__img" src={`${imgSrc}.png`} alt={title} loading="lazy" width="780" height="585" decoding="async" >
+        {webpSrc && <source srcset={webpSrc} type="image/webp" />}
+        <img class="feature-card__img" src={fallbackSrc} alt={title} loading="lazy" width="780" height="585" decoding="async" >
       </picture>
     </div>
   </a>
 </div> 
-

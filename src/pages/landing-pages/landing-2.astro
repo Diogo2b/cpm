@@ -1,7 +1,6 @@
 ---
 import Layout from '../../layouts/Base.astro';
 import LandingContactForm from '../../components/forms/LandingContactForm.astro';
-import Logo from '../../components/Logo.astro';
 
 const seo = {
 	title: 'Réalisations | Corse Pose Menuiserie',
@@ -14,9 +13,13 @@ const seo = {
   <div class="full-page-split__wrapper">
     <section class="full-page-split__image-section">
       <div class="full-page-split__logo">
-        <a href="/">
-          <Logo />
-        </a>
+        <img
+          src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=420&q=80"
+          alt="Menuiserie Corse Pose Menuiserie"
+          class="full-page-split__logo-img"
+          loading="lazy"
+          decoding="async"
+        />
       </div>
       <picture>
         <img
@@ -67,6 +70,12 @@ const seo = {
   left: 1rem;
   position: absolute;
   z-index: 1;
+}
+.full-page-split__logo-img {
+  display: block;
+  max-width: 180px;
+  height: auto;
+  border-radius: calc(var(--theme-shape-radius) / 2);
 }
 .full-page-split__logo a {
   text-decoration: none;
