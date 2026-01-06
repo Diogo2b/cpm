@@ -13,27 +13,27 @@ const themes = [
   {
     name: 'default',
     icon: classicThemeIcon,
-    label: 'Classic',
+    label: 'Classique',
   },
   {
     name: 'dark',
     icon: darkThemeIcon,
-    label: 'Dark',
+    label: 'Sombre',
   },
   {
     name: 'earth',
     icon: earthThemeIcon,
-    label: 'Earth',
+    label: 'Terre',
   },
   {
     name: 'ocean',
     icon: blueThemeIcon,
-    label: 'Ocean',
+    label: 'Océan',
   },
   {
     name: 'sand',
     icon: orangeThemeIcon,
-    label: 'Sand',
+    label: 'Sable',
   }
 ]
 
@@ -135,7 +135,7 @@ export class ThemeSwitcher extends LitElement {
         <button
           @click=${() => this._setTheme(theme.name)}
           ?active=${this.theme === theme.name}
-          title=${`Enable ${theme.label} Theme`}
+          title=${`Activer le thème ${theme.label}`}
         >
           ${theme.icon}
         </button>
