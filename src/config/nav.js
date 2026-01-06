@@ -5,11 +5,11 @@ export const nav = [
 	},
 	{
 		title: 'Nos Services',
-		slug: '/landing-pages/landing-1',
+		slug: '/services',
 	},
 	{
 		title: 'Réalisations',
-		slug: '/landing-pages/landing-2',
+		slug: '/realisations',
 	},
 	{
 		title: 'À propos',

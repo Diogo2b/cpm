@@ -21,11 +21,11 @@ export const footerLists = [
 			},
 			{
 				title: 'Nos Services',
-				slug: '/landing-pages/landing-1',
+				slug: '/services',
 			},
 			{
 				title: 'Réalisations',
-				slug: '/landing-pages/landing-2',
+				slug: '/realisations',
 			},
 			{
 				title: 'À propos',
@@ -42,19 +42,19 @@ export const footerLists = [
 		items: [
 			{
 				title: 'Fenêtres et portes',
-				slug: '/landing-pages/landing-1#fenetres-portes',
+				slug: '/services#fenetres-portes',
 			},
 			{
 				title: 'Volets battants et roulants',
-				slug: '/landing-pages/landing-1#volets',
+				slug: '/services#volets',
 			},
 			{
 				title: 'Portails et automatismes',
-				slug: '/landing-pages/landing-1#portails',
+				slug: '/services#portails',
 			},
 			{
 				title: 'Agencements sur mesure',
-				slug: '/landing-pages/landing-1#agencements',
+				slug: '/services#agencements',
 			},
 		],
 	},
