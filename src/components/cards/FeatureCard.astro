@@ -30,13 +30,18 @@ const webpSrc = isExternalImage ? null : `${imgSrc}.webp`;
   .feature-card__card .feature-card__img {
     --image-shadow: 0 -0.5rem 1rem rgba(138, 138, 138, 0.12);
     margin: 0 auto;
-    width: clamp(60%, 70%, 390px);
-    height: auto;
+    width: clamp(60%, 75%, 360px);
+    max-height: 240px;
+    aspect-ratio: 4 / 3;
     object-fit: cover;
-    /* border-radius: 1rem 1rem 0 0; */
     box-shadow: var(--image-shadow);
     transform: translateY(0.5rem);
     transition: transform var(--theme-transition);
+  }
+  @supports not (aspect-ratio: 4 / 3) {
+    .feature-card__card .feature-card__img {
+      height: 220px;
+    }
   }
   .feature-card__card:hover .feature-card__img {
     transform: translateY(0);
